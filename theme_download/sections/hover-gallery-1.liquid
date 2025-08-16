@@ -1,0 +1,63 @@
+<div class="hover-gallery">
+  {% for block in section.blocks %}
+    <div class="hover-block">
+      {% if block.settings.image != blank %}
+        <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title }}">
+      {% endif %}
+      <div class="hover-overlay">
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.description }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Hover Image Gallery",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image_card",
+      "name": "Image Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Your title here"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Your description here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hover Image Gallery",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "image_card"
+        },
+        {
+          "type": "image_card"
+        },
+        {
+          "type": "image_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

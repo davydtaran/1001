@@ -1,0 +1,29 @@
+{% if screen_width <= 767 %}
+<section class="only-mobile-section">
+  <div class="page-width">
+    <h2>Mobile Banner</h2>
+    <p>This section is visible only on mobile.</p>
+    {% if section.settings.image != blank %}
+      <img src="{{ section.settings.image | img_url: 'master' }}" alt="Mobile Banner" style="width:100%;">
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Only Mobile Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Only Mobile Banner"
+    }
+  ]
+}
+{% endschema %}

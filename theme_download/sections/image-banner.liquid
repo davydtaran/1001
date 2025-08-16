@@ -1,0 +1,142 @@
+{%- if section.settings.image != blank -%}
+  <div class="banner-image" style="position: relative;">
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.alt_text | escape }}" style="width: 100%; height: auto;" />
+
+    {% if section.settings.show_button %}
+      <div class="softglow-banner-button" style="
+        position: absolute;
+        bottom: 7%;
+        left: 58%;
+        transform: translateX(-50%);
+        z-index: 10;
+      ">
+        <a href="https://yfxr4y-kg.myshopify.com/collections" style="
+          display: inline-block;
+          padding: 14px 28px;
+          background-color: #d9911f;
+          color: #ffffff;
+          border-radius: 6px;
+          font-weight: bold;
+          text-decoration: none;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+          font-size: 18px;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#b6751a';"
+          onmouseout="this.style.backgroundColor='#d9911f';">
+          Find Your Perfect Light
+        </a>
+      </div>
+
+      <div class="softglow-banner-secondary-button desktop-only" style="
+        position: absolute;
+        top: 3%;
+        right: 20%;
+        z-index: 6;
+      ">
+        <a href="#" style="
+          display: inline-block;
+          padding: 11px 24px;
+          background-color: #d9911f;
+          color: #ffffff;
+          border-radius: 6px;
+          font-weight: bold;
+          text-decoration: none;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+          font-size: 17px;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#b6751a';"
+          onmouseout="this.style.backgroundColor='#d9911f';">
+          Special Offers
+        </a>
+      </div>
+    {% endif %}
+  </div>
+{%- endif -%}
+
+{%- for block in section.blocks -%}
+  <div class="banner-image" style="position: relative;">
+    <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.alt_text | escape }}" style="width: 100%; height: auto;" />
+
+    {% if block.settings.show_button %}
+      <div class="softglow-banner-button" style="
+        position: absolute;
+        bottom: 7%;
+        left: 58%;
+        transform: translateX(-50%);
+        z-index: 10;
+      ">
+        <a href="https://yfxr4y-kg.myshopify.com/collections" style="
+          display: inline-block;
+          padding: 10px 22px;
+          background-color: #F5A623;
+          color: #ffffff;
+          border-radius: 6px;
+          font-weight: bold;
+          text-decoration: none;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#d98f1c';"
+          onmouseout="this.style.backgroundColor='#F5A623';">
+          Find Your Perfect Light
+        </a>
+      </div>
+    {% endif %}
+  </div>
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "Image banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Image alt text",
+      "default": "Banner image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button on this banner",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Additional banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Image alt text",
+          "default": "Banner image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_button",
+          "label": "Show button on this banner",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
