@@ -1,0 +1,83 @@
+<div class="product-tabs">
+  {% assign tabs =
+    'description|📄|Description;
+     d|🆕|New Field;
+     specifications_tab|⚙️|Specifications;
+     what_s_in_the_box_tab|📦|What’s in the Box;
+     shipping_returns_tab|📬|Shipping & Returns;
+     warranty_tab|🛡|Warranty' | split: ';' %}
+
+  {% for tab in tabs %}
+    {% assign parts = tab | split: '|' %}
+    {% assign key = parts[0] | strip %}
+    {% assign icon = parts[1] | strip %}
+    {% assign label = parts[2] | strip %}
+    {% assign mf = product.metafields.custom[key] %}
+
+    {% if mf and mf.value != blank %}
+      <div class="tab-item">
+        <div class="tab-header" onclick="toggleTab(this)">
+          <span class="tab-icon">{{ icon }}</span>
+          <span class="tab-label">{{ label }}</span>
+          <span class="tab-arrow">▼</span>
+        </div>
+        <div class="tab-body">
+          {% assign lines = mf.value | replace: '\r\n', '\n' | replace: '\r', '\n' | split: '\n' %}
+          <ul class="tab-list">
+            {% for line in lines %}
+              {% assign t = line | strip %}
+              {% unless t == blank %}
+                <li>{{ t }}</li>
+              {% endunless %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<style>
+.product-tabs { margin-top: 40px; font-family: 'Segoe UI', sans-serif; color: #eee; }
+ .tab-item {
+  border-bottom: 1px solid #444;
+  padding-bottom: 0px;
+  margin-bottom: 0px; /* Убираем отступ */
+}
+
+
+
+.tab-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; font-size: 18px; font-weight: 600; cursor: pointer; }
+.tab-icon { margin-right: 10px; font-size: 20px; }
+.tab-label { flex-grow: 1; }
+.tab-arrow { transition: transform 0.3s; }
+.tab-item.open .tab-arrow { transform: rotate(-180deg); }
+.tab-header:hover .tab-arrow { color: #fff; }
+.tab-body {
+  display: none;
+  padding: 12px 0 12px 32px;
+  color: #ccc;
+}
+.tab-item.open .tab-body {
+  display: block;
+  margin-bottom: 24px; /* 👈 Только если открыт — отступ снизу */
+}
+
+.tab-list {
+  list-style-type: none; /* убираем стандартную точку */
+  padding-left: 0;       /* выравниваем */
+}
+
+
+.tab-list li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+  white-space: pre-line; /* 👈 переносы теперь сохраняются в строках */
+}
+  
+</style>
+
+<script>
+function toggleTab(el) {
+  el.closest('.tab-item').classList.toggle('open');
+}
+</script>

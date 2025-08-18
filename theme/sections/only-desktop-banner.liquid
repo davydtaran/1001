@@ -1,0 +1,27 @@
+{% if screen_width > 767 %}
+  <section class="only-desktop-section">
+    <div class="page-width">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Desktop Banner" style="width:100%;">
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Only Desktop Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Only Desktop Banner"
+    }
+  ]
+}
+{% endschema %}

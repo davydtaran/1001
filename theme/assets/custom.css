@@ -1,0 +1,269 @@
+/* Уменьшаем общий масштаб */
+.product, .product__info-wrapper, .product__media-wrapper {
+  transform: scale(0.92);
+  transform-origin: top left;
+}
+
+/* Уменьшаем шрифт заголовка */
+.product__title {
+  font-size: 22px;
+}
+
+/* Уменьшаем описание */
+.product__description {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+/* Уменьшаем размер картинок */
+.product__media img {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Уменьшаем отступы */
+.product__info-wrapper, .product__media-wrapper {
+  padding: 10px;
+}
+
+/* Уменьшаем и сдвигаем весь блок информации */
+.product__info-wrapper {
+  margin-left: 10px;
+  font-size: 75% !important;
+  transform: scale(0.95);
+  transform-origin: top left;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Наследуем шрифт и размер у всех внутренних элементов */
+.product__info-wrapper * {
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* Минималистичные кнопки */
+.product-form__buttons {
+  transform: scale(0.95);
+  transform-origin: top left;
+}
+
+.product-form__submit,
+.shopify-payment-button__button {
+  background-color: transparent !important;
+  color: #fff !important;
+  border: 1px solid #aaa !important;
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  padding: 10px 24px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.product-form__submit:hover,
+.shopify-payment-button__button:hover {
+  background-color: #eee !important;
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+/* Уменьшаем шрифт у дополнительных ссылок */
+.shopify-payment-button__more-options,
+.product__description,
+.product__title,
+.product__text {
+  font-size: 80% !important;
+}
+@media screen and (min-width: 990px) {
+  .product__info-wrapper {
+    flex: 1 1 50%;
+    max-width: 480px;
+    padding-left: 32px;
+    font-size: 90% !important;
+  }
+
+  .product__info-wrapper * {
+    font-size: inherit !important;
+  }
+
+  .product__media-wrapper {
+    flex: 1 1 50%;
+  }
+
+  .product__container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start;
+  }
+}
+
+/* Кнопка минималистичная */
+.product-form__submit {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #aaa !important;
+}
+
+.product-form__submit:hover {
+  background: #F2911B !important;
+  color: #ffffff !important;
+  border-color: #F2911B !important;
+}
+
+
+/* Shop Pay и текст под ним */
+.shopify-payment-button__button,
+.shopify-payment-button__more-options {
+  font-size: 13px !important;
+  border-radius: 0 !important;
+  margin-bottom: 10px;
+}
+
+.custom-features-block,
+.custom-shipping-block {
+  border: 1px solid #444;
+  padding: 16px 20px;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #eee;
+  background: #111;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.feature-item img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+}
+
+.custom-shipping-block h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.custom-shipping-block ul {
+  padding-left: 16px;
+  list-style: none;
+}
+
+.custom-shipping-block ul li {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+body.template-product {
+  background-image: url("https://cdn.shopify.com/s/files/1/0611/6291/3851/files/3.png?v=1747895953");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Header — чёрный */
+body.product-white-page .site-header,
+body.product-white-page .header-wrapper {
+  background-color: #000000 !important;
+header.site-header {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+header.site-header a {
+  color: #ffffff !important;
+}
+.product-image-slider {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.product-image-slider img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.slick-slide {
+  text-align: center;
+}
+/* === SoftGlow Hero Banner Styles === */
+.softglow-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.softglow-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.softglow-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  max-width: 90%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+}
+
+.softglow-content h1 {
+  font-size: 38px;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.softglow-content p {
+  font-size: 18px;
+  margin: 0 0 18px;
+}
+
+.softglow-button {
+  display: inline-block;
+  background-color: #b6862c;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.softglow-button:hover {
+  background-color: #997025;
+}
+
+@media (max-width: 768px) {
+  .softglow-content {
+    padding: 16px;
+  }
+
+  .softglow-content h1 {
+    font-size: 24px;
+  }
+
+  .softglow-content p {
+    font-size: 14px;
+  }
+
+  .softglow-button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
