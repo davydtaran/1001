@@ -1,0 +1,38 @@
+footer {
+  background-color: #222;
+  padding: 30px;
+  color: #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+footer h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a,
+footer p a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover,
+footer p a:hover {
+  color: #fff;
+}

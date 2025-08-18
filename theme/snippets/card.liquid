@@ -1,0 +1,7 @@
+<div class="wishlist-card">
+  <a href="{{ product.url }}">
+    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+    <p>{{ product.title }}</p>
+    <p>{{ product.price | money }}</p>
+  </a>
+</div>
